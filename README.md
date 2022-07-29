@@ -1,4 +1,4 @@
-#shopping-cart-app
+# shopping-cart-app
 
 ![Screenshot (143)](https://user-images.githubusercontent.com/67889306/181831416-a4660584-6b07-41c7-9098-0ec3a3338875.png)
 ![Screenshot (144)](https://user-images.githubusercontent.com/67889306/181831422-8f0ab7fd-8667-40b7-96c3-747e73245a16.png)
