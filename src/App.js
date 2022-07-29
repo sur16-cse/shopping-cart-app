@@ -7,21 +7,23 @@ import { connect } from 'react-redux';
 import { Fragment } from 'react';
 import { Navigate } from 'react-router-dom';
 import Home from './route/home.component';
+import Cart from './components/cart/cart.component';
 function App({current}) {
   return (
     <Fragment>
       <Routes>
           <Route path="/" element={<NavbarComponent/>}>
               <Route index element={<Home/>}/>
-          </Route>
-           {!current ? 
-            <Route
-            path="*"
-            element={<Navigate to="/" replace />}
-            />
-           : 
-            <Route path="/product/:id" element={<SingleItemComponent/>}/>
-          } 
+              <Route path='/cart' element={<Cart/>}/>
+              {!current ? 
+                <Route
+                path="*"
+                element={<Navigate to="/" replace />}
+                />
+              : 
+                <Route path="/product/:id" element={<SingleItemComponent/>}/>
+              }
+          </Route> 
       </Routes>
     </Fragment>
   );

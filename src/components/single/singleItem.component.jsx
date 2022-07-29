@@ -3,9 +3,13 @@ import { Button } from "@mui/material";
 import { connect } from "react-redux";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import * as actionTypes from '../../redux/actions.jsx'
+import { Outlet } from "react-router-dom";
+import { Fragment } from "react";
 const SingleItem=({current,addToCart})=>{
     //const current=props.location.state
     return (
+      <>
+      <Outlet/>
         <div className="s-container">
           <div className='img-container'>
           <img
@@ -30,6 +34,7 @@ const SingleItem=({current,addToCart})=>{
             </Button>
           </div>
         </div>
+        </>
       );
 }
 

@@ -30,7 +30,7 @@ const Product = ({product,addToCart,loadCurrentItem})=>{
     const classes=useStyles()
     const handleOnClick=()=>{
         loadCurrentItem(product)
-        history(`/product/${product.id}`) 
+        history(`/product/${product.id}`)  
     }
     return(
       <Fragment>

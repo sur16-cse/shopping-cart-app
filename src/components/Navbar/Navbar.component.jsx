@@ -32,9 +32,8 @@ const Navbar=({cart=[]})=>{
       cart.forEach((item) => {
         count += item.qty;
       });
-  
       setCartCount(count);
-    }, [cart, cartCount]);
+    }, [cart]);
     return (
       <Fragment>
         <div className={classes.root}>
