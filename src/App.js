@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import NavbarComponent from './components/Navbar/Navbar.component';
+import {Routes, Route, Link} from 'react-router-dom';
+import SingleItemComponent from './components/single/singleItem.component';
+import { connect } from 'react-redux';
+import { Fragment } from 'react';
+import { Navigate } from 'react-router-dom';
+import Home from './route/home.component';
+function App({current}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Routes>
+          <Route path="/" element={<NavbarComponent/>}>
+              <Route index element={<Home/>}/>
+          </Route>
+           {!current ? 
+            <Route
+            path="*"
+            element={<Navigate to="/" replace />}
+            />
+           : 
+            <Route path="/product/:id" element={<SingleItemComponent/>}/>
+          } 
+      </Routes>
+    </Fragment>
   );
 }
 
-export default App;
+const mapStateToProps=(state)=>{
+  return{
+    current:state.currentItem
+  }
+}
+export default connect(mapStateToProps)(App);
