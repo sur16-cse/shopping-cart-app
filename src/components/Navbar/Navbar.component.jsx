@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Outlet } from "react-router-dom";
 import { Fragment } from "react";
 import { connect } from "react-redux";
+import './Navbar.styles.css'
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -37,7 +38,7 @@ const Navbar=({cart=[]})=>{
     return (
       <Fragment>
         <div className={classes.root}>
-        <AppBar style={{backgroundColor:'#badc58'}} position="static">
+        <AppBar style={{backgroundColor:'rgb(144, 158, 177)'}} position="static">
           <Toolbar className={classes.tool}>
             
             <Typography variant="h6" className={classes.title}>

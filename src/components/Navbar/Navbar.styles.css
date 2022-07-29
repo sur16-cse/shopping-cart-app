@@ -1,6 +1,12 @@
 .cartNumber{
     position: absolute;
-    left: 74%;
-    top: -15%;
+    left: 76%;
+    top: -18%;
     font-size: smaller;
+    font-weight: bold;
+    color:rgb(7, 6, 17)
+  }
+
+  .nav{
+    color:rgb(144, 158, 177)
   }

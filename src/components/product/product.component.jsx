@@ -19,11 +19,10 @@ const useStyles = makeStyles({
       marginBottom:'1%'
     },
     media: {
-      height: '40vh',
+      height: '38vh',
     },
-    center:{
-       
-
+    cardstyle:{
+      height:'35vh'
     }
   });
 const Product = ({product,addToCart,loadCurrentItem})=>{
@@ -31,11 +30,7 @@ const Product = ({product,addToCart,loadCurrentItem})=>{
     const classes=useStyles()
     const handleOnClick=()=>{
         loadCurrentItem(product)
-        history(`/product/${product.id}`)
-        // history.push({
-        //     pathname:`/product/${product.id}`,
-        //     state:product
-        // })
+        history(`/product/${product.id}`) 
     }
     return(
       <Fragment>
@@ -44,15 +39,13 @@ const Product = ({product,addToCart,loadCurrentItem})=>{
       
           <CardMedia
             className={classes.media}
-            image={product.image}
-            title={product.title}
-            
+            image={product.image}   
           />
           <CardContent className={classes.cardstyle}>
             <Typography gutterBottom variant="h5" component="h2">
               {product.title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p" style={{height: '26vh'}}>
+            <Typography variant="body2" color="textSecondary" component="p" style={{height: '25vh'}}>
               {product.description}
             </Typography>
             <br/>
